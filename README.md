@@ -1,11 +1,12 @@
 #CloudBees Private SaaS Edition Managed Master Template Example
 This repository provides an example of how you may create custom Docker images to use for managed masters connected to a CloudBees Jenkions Operations Center running on the CloudBees Private SaaS Edition.
 
-The `Dockerfile` starts wiht a `FROM` value of the CloudBees PSE Master Docker image: `cloudbees/pse-master`. 
-Note the download of CloudBees Jenkins Enterprise war; this allows overriding the Jenkins Enterprise version included with the PSE image - for example to use a newer image.
-The `COPY ./plugins/* /usr/share/jenkins/ref/plugins/` entry allows installing custom plugins, in this case the `simple-build-for-pipeline` plugin that provides a custom Pipeline DSL.
+###Dockerfile
+- The `Dockerfile` starts with a `FROM` value of the CloudBees PSE Master Docker image: `cloudbees/pse-master`. 
+- The download of CloudBees Jenkins Enterprise war; this allows overriding the Jenkins Enterprise version included with the PSE image - for example to use a newer image.
+- The `COPY ./plugins/* /usr/share/jenkins/ref/plugins/` entry allows installing custom plugins, in this case the `simple-build-for-pipeline` plugin that provides a custom Pipeline DSL.
 
-Besides the `Dockerfile`, the template consists of two primary customization components:
+Besides the `Dockerfile`, the template consists of two primary customization components.
 ###additional/upgraded plugins listed in the `plugins.txt` file, specifically:
 - Latest Pipeline plugins
 - GitHub Organization Folder plugin
