@@ -19,5 +19,5 @@ Besides the `Dockerfile`, the template consists of two primary customization com
 - `init_05_mail_server_config.groovy`: Configures mail server to allow sending email from Jenkins
 - `init_08_audit_trail_config.groovy`: Configures Audit Trail plugin to send data to Logstash via syslog; and on to Elasticsearch to be displayed in custom CJOC analytics dashboard
 - `init_20_top-level-folders.groovy`: Creates a folder with a custom icon from the custom Simple Build plugin, used to hold example job(s)
-- `init_21_simple_build_pipeline.groovy`: Creates an example Pipeline job that uses DSL from the Simple Build plugin
+- `init_21_simple_build_pipeline.groovy`: Creates an example Pipeline job that uses DSL from the (Simple Build plugin)[https://github.com/kmadel/simple-build-for-pipeline-plugin]
 - `init_99_save.groovy`: Ensures any previous configuration changes are saved  
