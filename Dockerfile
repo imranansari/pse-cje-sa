@@ -1,10 +1,10 @@
-FROM cloudbees/pse-master:1.0.3
+FROM cloudbees/pse-master:1.1.0
 
 USER root
 #override CJE war to use newer version
 RUN rm /usr/share/jenkins/jenkins.war
-RUN curl -fsSL http://jenkins-updates.cloudbees.com/download/je/1.642.18.1/jenkins.war -o /usr/share/jenkins/jenkins.war \
-  && echo "f6118c7785b9d9270dd7086b60e2f86062b70154 /usr/share/jenkins/jenkins.war" | sha1sum -c -
+RUN curl -fsSL http://jenkins-updates.cloudbees.com/download/je/1.651.3.1/jenkins.war -o /usr/share/jenkins/jenkins.war \
+  && echo "515508cd6311cd343f304c6567bc7f6e03c06a0e /usr/share/jenkins/jenkins.war" | sha1sum -c -
 
 #setup base set of Pipeline Global Libs via init groovy script
 COPY ./init.groovy.d/* /usr/share/jenkins/home/init.groovy.d/
