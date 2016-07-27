@@ -12,7 +12,8 @@ import java.util.logging.Logger
 Logger logger = Logger.getLogger("init.init_03_add_sa_credentials.groovy")
 
 File disableScript = new File(Jenkins.getInstance().getRootDir(), ".disable-init_03_add_sa_credentials")
-
+//currently using credentials from CJOC so want this disabled, still a good example of dynamically creating credentials
+disableScript.createNewFile()
 //only run after restart after license is activated, and only onece
 if (!disableScript.exists()) {
 
