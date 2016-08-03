@@ -12,6 +12,8 @@ COPY ./init.groovy.d/* /usr/share/jenkins/home/init.groovy.d/
 #use the CloudBees update center
 ENV JENKINS_UC https://jenkins-updates.cloudbees.com
 
+#need to overried FROM plugins.sh for use with cloudbees update center, cloubees uses '*latest*' instead of just 'latest'
+COPY plugins.sh /usr/local/bin/plugins.sh
 #copy list of non-standard plugins to install
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
