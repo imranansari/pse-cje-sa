@@ -87,7 +87,7 @@ while read spec || [ -n "$spec" ]; do
     plugin=(${spec//:/ });
     [[ ${plugin[0]} =~ ^# ]] && continue
     [[ ${plugin[0]} =~ ^\s*$ ]] && continue
-    [[ -z ${plugin[1]} ]] && plugin[1]="*latest*"
+    [[ -z ${plugin[1]} ]] && plugin[1]="latest"
 
     if [ -z "$JENKINS_UC_DOWNLOAD" ]; then
       JENKINS_UC_DOWNLOAD=$JENKINS_UC/download
