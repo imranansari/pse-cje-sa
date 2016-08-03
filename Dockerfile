@@ -9,6 +9,9 @@ RUN curl -fsSL http://jenkins-updates.cloudbees.com/download/je/1.651.3.1/jenkin
 #setup base set of Pipeline Global Libs via init groovy script
 COPY ./init.groovy.d/* /usr/share/jenkins/home/init.groovy.d/
 
+#use the CloudBees update center
+ENV JENKINS_UC https://jenkins-updates.cloudbees.com
+
 #copy list of non-standard plugins to install
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
