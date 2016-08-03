@@ -24,6 +24,6 @@ while read spec || [ -n "$spec" ]; do
       JENKINS_UC_DOWNLOAD=$JENKINS_UC/download
     fi
     echo "Download URL: ${JENKINS_UC_DOWNLOAD}/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi"
-    curl --retry 3 --retry-delay 5 -sSL -f ${JENKINS_UC_DOWNLOAD}/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -o $REF/${plugin[0]}.jpi
+    curl --retry 3 --retry-delay 5 -sSL -f "${JENKINS_UC_DOWNLOAD}/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi" -o $REF/${plugin[0]}.jpi
     unzip -qqt $REF/${plugin[0]}.jpi
 done  < $1
