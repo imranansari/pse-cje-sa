@@ -1,4 +1,4 @@
-#CloudBees Private SaaS Edition Managed Master Template Example
+#CloudBees Private SaaS Edition Managed Master Template Example [![Build Status](http://sa-cje-test-1-642-4-1-11.jenkins.beedemo.net/buildStatus/icon?job=pipeline-examples/beedemo/pse-cje-sa/master)](http://sa-cje-test-1-642-4-1-11.jenkins.beedemo.net/job/pipeline-examples/job/beedemo/job/pse-cje-sa/job/master/)
 This repository provides an example of how you may create custom Docker images to use for managed masters connected to a CloudBees Jenkions Operations Center running on the CloudBees Private SaaS Edition.
 
 ###Dockerfile
