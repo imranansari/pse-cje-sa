@@ -165,6 +165,7 @@ https://github.com/beedemo/custom-marker-pipelines.git
 """
 
 job = j.createProjectFromXML(jobName, new ByteArrayInputStream(jobConfigXml.getBytes("UTF-8")));
+job.save()
 logger.info("created $jobName")
 
  //create marker file to disable scripts from running twice
