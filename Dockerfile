@@ -1,6 +1,6 @@
-FROM cloudbees/pse-master:1.1.0
+FROM cloudbees/pse-master:1.3.0
 
-ARG TAG_FROM_TRIGGER=1.651.3.1
+ARG TAG_FROM_TRIGGER=2.7.19.1
 
 USER root
 #override CJE war to use newer version
@@ -10,15 +10,9 @@ RUN curl -fsSL http://jenkins-updates.cloudbees.com/download/je/$TAG_FROM_TRIGGE
 
 #setup base set of Pipeline Global Libs via init groovy script
 COPY ./init.groovy.d/* /usr/share/jenkins/home/init.groovy.d/
-
-#use the CloudBees update center
-ENV JENKINS_UC https://jenkins-updates.cloudbees.com
-
-#need to overried FROM plugins.sh for use with cloudbees update center, cloubees uses '*latest*' instead of just 'latest'
-COPY plugins.sh /usr/local/bin/plugins.sh
+COPY .//license-activated/* /usr/share/jenkins/home/license-activated-or-renewed-after-expiration.groovy.d/
+COPY ./quickstart/* /usr/share/jenkins/home/quickstart.groovy.d/
 #copy list of non-standard plugins to install
-COPY plugins.txt /usr/share/jenkins/plugins.txt
-RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 COPY ./plugins/* /usr/share/jenkins/ref/plugins/
 
 #change back to jenkins user for RUN/ENTRYPOINT commands

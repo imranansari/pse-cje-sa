@@ -32,16 +32,6 @@ if (!disableScript.exists()) {
   credentialsProvider.credentials.add(dockerRegistryBeedemo)
   logger.info("added hub.docker registry credentials for beedemo")
 
-  Credentials githubTokenDev1 = new UsernamePasswordCredentialsImpl(
-          CredentialsScope.GLOBAL,
-          "3ebff2f8-1013-42ff-a1e4-6d74e99f4ca1",
-          "github.beescloud.com dev1 token",
-          "dev1",
-          env['GITHUB_BEESCLOUD_DEV1'])
-
-  credentialsProvider.credentials.add(githubTokenDev1)
-  logger.info("added github.beescloud.com credentials for dev1")
-
   Credentials githubTokenBeedemoUser = new UsernamePasswordCredentialsImpl(
           CredentialsScope.GLOBAL,
           "beedemo-user-token",

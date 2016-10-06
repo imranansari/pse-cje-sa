@@ -33,6 +33,7 @@ pipeline-stage-step
 pipeline-input-step
 pipeline-rest-api
 pipeline-stage-view
+pipeline-utility-steps
 run-condition
 scm-api
 script-security
