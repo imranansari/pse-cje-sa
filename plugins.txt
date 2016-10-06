@@ -1,4 +1,3 @@
-audit-trail
 branch-api
 build-timeout
 build-view-column

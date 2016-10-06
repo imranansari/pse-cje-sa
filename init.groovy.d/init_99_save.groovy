@@ -7,7 +7,7 @@ import java.util.logging.Logger
 
 Logger logger = Logger.getLogger("init_99_save.groovy")
     
-File disableSSavacript = new File(Jenkins.getInstance().getRootDir(), ".disable-init-99-save-script")
+File disableSaveScript = new File(Jenkins.getInstance().getRootDir(), ".disable-init-99-save-script")
 File restartedFlag = new File(Jenkins.getInstance().getRootDir(), ".restarted-flag")
 if (disableSaveScript.exists() && restartedFlag.exists()) {
     logger.info("DISABLED init_99_save script")
