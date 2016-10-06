@@ -1,5 +1,12 @@
 import hudson.model.*;
 import jenkins.model.*;
+
+import hudson.security.ACL;
+import jenkins.branch.OrganizationFolder;
+import jenkins.scm.api.SCMSourceOwner;
+import jenkins.scm.api.SCMSourceOwners;
+import org.jenkinsci.plugins.github_branch_source.GitHubSCMNavigator;
+
 import java.util.logging.Logger
 
 Logger logger = Logger.getLogger("init_21_simple_build_pipeline.groovy")
@@ -166,6 +173,18 @@ https://github.com/beedemo/custom-marker-pipelines.git
 
 job = j.createProjectFromXML(jobName, new ByteArrayInputStream(jobConfigXml.getBytes("UTF-8")));
 job.save()
+ACL.impersonate(ACL.SYSTEM, new Runnable() {
+                @Override public void run() {
+                    for (final SCMSourceOwner owner : SCMSourceOwners.all()) {
+                        if (owner instanceof OrganizationFolder) {
+                            OrganizationFolder orgFolder = (OrganizationFolder) owner;
+                            for (GitHubSCMNavigator navigator : orgFolder.getNavigators().getAll(GitHubSCMNavigator.class)) {
+                                orgFolder.scheduleBuild();
+                            }
+                        }
+                    }
+                }
+            });
 logger.info("created $jobName")
 
  //create marker file to disable scripts from running twice
