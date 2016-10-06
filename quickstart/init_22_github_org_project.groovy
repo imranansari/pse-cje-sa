@@ -47,7 +47,6 @@ https://avatars.githubusercontent.com/u/15805500?v=3
       <name>Repositories</name>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
-      <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
       </jobNames>
