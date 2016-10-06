@@ -16,7 +16,6 @@ def jobName = "beedemo"
 
 println "--> creating $jobName"
 def jobConfigXml = """
-<?xml version="1.0"?>
 <jenkins.branch.OrganizationFolder plugin="branch-api@1.10.2">
   <actions>
     <org.jenkinsci.plugins.orgfolder.github.GitHubOrgAction plugin="github-organization-folder@1.4">
