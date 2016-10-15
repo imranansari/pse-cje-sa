@@ -1,6 +1,6 @@
-FROM cloudbees/pse-master:1.3.0
+FROM cloudbees/pse-master:1.3.1
 
-ARG TAG_FROM_TRIGGER=2.7.19.1
+ARG TAG_FROM_TRIGGER=2.7.20.2
 
 USER root
 #override CJE war to use newer version
