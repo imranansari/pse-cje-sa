@@ -11,6 +11,8 @@ import java.util.logging.Logger
 
 Logger logger = Logger.getLogger("init_12_http_request_global_config.groovy")
 
+Jenkins j = Jenkins.getInstance()
+
 File disableScript = new File(j.rootDir, ".disable-init_12_http_request_global_config")
 if (disableScript.exists()) {
     logger.info("DISABLED init_12_http_request_global_config script")
