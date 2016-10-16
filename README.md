@@ -1,5 +1,7 @@
 #CloudBees Private SaaS Edition Managed Master Template Example
-This repository provides an example of how you may create custom Docker images to use for [Managed Masters](https://go.cloudbees.com/docs/cloudbees-documentation/pse-admin-guide/master-provisioning.html#master-provisioning_master-provisioning) connected to a CloudBees Jenkions Operations Center running on the CloudBees Private SaaS Edition. It includes an example of using Managed Master environmental variables to create dynamic properties for global and/or job configuration.
+This repository provides an example of how you may create custom Docker images to use for [Managed Masters](https://go.cloudbees.com/docs/cloudbees-documentation/pse-admin-guide/master-provisioning.html#master-provisioning_master-provisioning) connected to a CloudBees Jenkions Operations Center running on the CloudBees Private SaaS Edition. 
+
+It includes an example of using Managed Master environmental variables to create dynamic properties for global and/or job configuration.
 
 ###Dockerfile
 - The `Dockerfile` starts with a `FROM` value of the CloudBees PSE Master Docker image: `cloudbees/pse-master`. 
@@ -8,6 +10,7 @@ This repository provides an example of how you may create custom Docker images t
 - The [`init_01_install_plugins.groovy`](license-activated/init_01_install_plugins.groovy) license-activated script automates the installation of specified plugins in the [`cje_plugins.txt`](license-activated/cje_plugins.txt) file.
 
 Besides the `Dockerfile`, the template consists of two primary customization components.
+
 ###additional/upgraded plugins listed in the `plugins.txt` file, specifically:
 - Audit Trail plugin
 - HTTP Request plugin
@@ -17,8 +20,10 @@ Besides the `Dockerfile`, the template consists of two primary customization com
 - `init_03_add_sa_credentials.groovy`: CURRENTLY DISABLED Sets up global credentials, retrieving sensitive data from environmental variables; includes credential to connect to GitHub Enterprise
 - `init_05_mail_server_config.groovy`: Configures mail server to allow sending email from Jenkins
 - `init_99_save.groovy`: Ensures any previous configuration changes are saved, sets flags not re-run certain scripts, and on restart initializes the custom `quickstart` hook
+
 #####License Activated scripts
 - `init_01_install_plugins.groovy`: Installs specific set of plugins, thereby skipping the Jenkin 2.x Setup Wizard
+
 #####Quickstart scripts - a custom init groovy hook that fires after required plugins are installed and after a necessary restart
 - `init_08_audit_trail_config.groovy`: Configures Audit Trail plugin to send data to Logstash via syslog; and on to Elasticsearch to be displayed in custom CJOC analytics dashboard
 - `init_12_http_request_global_config.groovy`: Creates Basic Digest Authentication entry for HttpRequest plugin for use with the Pipeline External shared library - REQUIRES environment variable `ES_AUTH_CREDENTIALS_ID` to be set to Jenkins Credential ID for Elasticsearch
