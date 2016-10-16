@@ -50,7 +50,7 @@ if(env['GITHUB_ORG'] != null) {
         </userRemoteConfigs>
         <branches>
         <hudson.plugins.git.BranchSpec>
-        <name>\\${library.BeedemoLibs.version}</name>
+        <name>\${library.BeedemoLibs.version}</name>
         </hudson.plugins.git.BranchSpec>
         </branches>
         <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -74,7 +74,7 @@ if(env['GITHUB_ORG'] != null) {
           <name>Repositories</name>
           <filterExecutors>false</filterExecutors>
           <filterQueue>false</filterQueue>
-          <properties class="hudson.model.View\\$PropertyList"/>
+          <properties class="hudson.model.View\$PropertyList"/>
           <jobNames>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </jobNames>
