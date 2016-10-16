@@ -58,3 +58,4 @@ github-api
 github
 github-branch-source
 github-organization-folder
+docker-workflow

@@ -22,7 +22,7 @@ COPY ./quickstart/* /usr/share/jenkins/home/quickstart.groovy.d/
 RUN /usr/local/bin/install-plugins.sh \
   audit-trail \
   http_request \
-  docker-workflow \
+  docker-commons:1.4.0 \
   dockerhub-notification \
   pipeline-utility-steps
 
