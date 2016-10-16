@@ -11,6 +11,12 @@ import java.util.logging.Logger
 
 Logger logger = Logger.getLogger("init_12_http_request_global_config.groovy")
 
+File disableScript = new File(j.rootDir, ".disable-init_12_http_request_global_config")
+if (disableScript.exists()) {
+    logger.info("DISABLED init_12_http_request_global_config script")
+    return
+}
+
 def env = System.getenv()
 if(env['ES_AUTH_CREDENTIALS_ID'] != null) {
 
@@ -37,6 +43,7 @@ if(env['ES_AUTH_CREDENTIALS_ID'] != null) {
 
     } else {
         println "could not find credential for id ${esAuthCredentialsId}, skipping init_12_http_request_global_config"
-        return
     }
 }
+//create marker file to disable script from running twice
+disableScript.createNewFile()
