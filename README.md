@@ -1,6 +1,8 @@
 #CloudBees Private SaaS Edition Managed Master Template Example
 This repository provides an example of how you may create custom Docker images to use for [Managed Masters](https://go.cloudbees.com/docs/cloudbees-documentation/pse-admin-guide/master-provisioning.html#master-provisioning_master-provisioning) connected to a CloudBees Jenkions Operations Center running on the CloudBees Private SaaS Edition. 
 
+The JAVA_OPTS property `-Djenkins.install.runSetupWizard=false` is set so the Jenkins 2 Setup Wizard will be skipped; rather the specific set of plugins specified in [`cje_plugins.txt`](license-activated/cje_plugins.txt) will be installed; thus streamlining the provisioning process.
+
 It includes an example of using Managed Master environmental variables to create dynamic properties for global and/or job configuration.
 
 ###Dockerfile
