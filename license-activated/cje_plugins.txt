@@ -51,7 +51,6 @@ pipeline-input-step
 pipeline-stage-step
 workflow-basic-steps
 workflow-aggregator
-pipeline-utility-steps
 wikitext
 ldap
 git
@@ -62,3 +61,4 @@ github-organization-folder
 http_request
 docker-workflow
 dockerhub-notification
+pipeline-utility-steps
