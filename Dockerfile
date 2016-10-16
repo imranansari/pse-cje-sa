@@ -4,6 +4,7 @@ ARG TAG_FROM_TRIGGER=2.7.20.2
 
 #set java opts variable to skip setup wizard; plugins will be installed via license activated script
 ENV JAVA_ARGS="-Djenkins.install.runSetupWizard=false"
+#JAVA_OPTS don't appear to propagate correctly, so also using JAVA_ARGS above
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV JENKINS_UC http://jenkins-updates.cloudbees.com
 
@@ -24,7 +25,8 @@ RUN /usr/local/bin/install-plugins.sh \
   http_request \
   docker-commons:1.4.0 \
   dockerhub-notification \
-  pipeline-utility-steps
+  pipeline-utility-steps \
+  hipchat
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
 USER jenkins

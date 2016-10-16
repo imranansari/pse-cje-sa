@@ -29,7 +29,6 @@ if(env['GITHUB_ORG'] != null) {
     println "--> creating $jobName"
     def jobConfigXml = """
     <jenkins.branch.OrganizationFolder plugin="branch-api@1.11">
-      <description/>
       <displayName>$jobName</displayName>
       <properties>
         <com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty plugin="cloudbees-folders-plus@3.0">
@@ -144,9 +143,7 @@ if(env['GITHUB_ORG'] != null) {
                 <configVersion>2</configVersion>
                 <userRemoteConfigs>
                   <hudson.plugins.git.UserRemoteConfig>
-                    <url>
-    https://github.com/beedemo/custom-marker-pipelines.git
-    </url>
+                    <url>https://github.com/beedemo/custom-marker-pipelines.git</url>
                   </hudson.plugins.git.UserRemoteConfig>
                 </userRemoteConfigs>
                 <branches>
@@ -170,9 +167,7 @@ if(env['GITHUB_ORG'] != null) {
                 <configVersion>2</configVersion>
                 <userRemoteConfigs>
                   <hudson.plugins.git.UserRemoteConfig>
-                    <url>
-    https://github.com/beedemo/custom-marker-pipelines.git
-    </url>
+                    <url>https://github.com/beedemo/custom-marker-pipelines.git</url>
                   </hudson.plugins.git.UserRemoteConfig>
                 </userRemoteConfigs>
                 <branches>
