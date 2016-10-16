@@ -3,6 +3,7 @@ FROM cloudbees/pse-master:1.3.1
 ARG TAG_FROM_TRIGGER=2.7.20.2
 
 #set java opts variable to skip setup wizard; plugins will be installed via license activated script
+ENV JAVA_ARGS="-Djenkins.install.runSetupWizard=false"
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV JENKINS_UC http://jenkins-updates.cloudbees.com
 

@@ -25,8 +25,8 @@ plugins.each { pluginName ->
   try {
       jenkins.instance.updateCenter.getPlugin(pluginName).deploy()
   } catch(Exception ex) {
-      logger.error("unable to install plugin $pluginName")
-      logger.error(ex.getMessage())
+      logger.info("unable to install plugin $pluginName")
+      logger.info(ex.getMessage())
   }
 }
 
