@@ -21,7 +21,7 @@ if (disableScript.exists()) {
 
 def env = System.getenv()
 
-if(env['GITHUB_ORG'] != null)) {
+if(env['GITHUB_ORG'] != null) {
 
     def jobName = env['GITHUB_ORG']
     def scanCredentialsId = env['GITHUB_CREDENTIALS_ID']

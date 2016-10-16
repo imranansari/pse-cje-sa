@@ -17,8 +17,14 @@ RUN curl -fsSL http://jenkins-updates.cloudbees.com/download/je/$TAG_FROM_TRIGGE
 COPY ./init.groovy.d/* /usr/share/jenkins/home/init.groovy.d/
 COPY ./license-activated/* /usr/share/jenkins/home/license-activated-or-renewed-after-expiration.groovy.d/
 COPY ./quickstart/* /usr/share/jenkins/home/quickstart.groovy.d/
-#copy list of non-standard plugins to install
-COPY ./plugins/* /usr/share/jenkins/ref/plugins/
+
+#install plugins that aren't bundled
+RUN /usr/local/bin/install-plugins.sh \
+  audit-trail \
+  http_request \
+  docker-workflow \
+  dockerhub-notification \
+  pipeline-utility-steps
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
 USER jenkins

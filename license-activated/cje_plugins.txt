@@ -58,7 +58,3 @@ github-api
 github
 github-branch-source
 github-organization-folder
-http_request
-docker-workflow
-dockerhub-notification
-pipeline-utility-steps
