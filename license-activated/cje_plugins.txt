@@ -51,6 +51,7 @@ pipeline-input-step
 pipeline-stage-step
 workflow-basic-steps
 workflow-aggregator
+pipeline-utility-steps
 wikitext
 ldap
 git
