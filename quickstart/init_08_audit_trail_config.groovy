@@ -6,8 +6,8 @@ import java.util.logging.Logger
 
 Logger logger = Logger.getLogger("init.init_08_audit_trail_config.groovy")
 logger.info("begin audit trail config")
-def syslogHostIp = "ec2-52-26-60-228.us-west-2.compute.amazonaws.com"
-def syslogPort = 31034
+def syslogHostIp = "ec2-52-25-168-123.us-west-2.compute.amazonaws.com"
+def syslogPort = 31781
 SyslogAuditLogger syslogAuditLogger = new SyslogAuditLogger(syslogHostIp, syslogPort, System.properties.'MASTER_NAME', "", null, null)
 Jenkins j = Jenkins.getInstance();
 AuditTrailPlugin plugin = j.getPlugin(AuditTrailPlugin.class);
