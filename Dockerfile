@@ -28,6 +28,7 @@ RUN /usr/local/bin/install-plugins.sh \
   dockerhub-notification \
   pipeline-utility-steps \
   hipchat \
+  branch-api \
   blueocean
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
