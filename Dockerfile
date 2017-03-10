@@ -19,8 +19,6 @@ COPY ./init.groovy.d/* /usr/share/jenkins/home/init.groovy.d/
 COPY ./license-activated/* /usr/share/jenkins/home/license-activated-or-renewed-after-expiration.groovy.d/
 COPY ./quickstart/* /usr/share/jenkins/home/quickstart.groovy.d/
 COPY ./scriptApproval.xml /usr/share/jenkins/home/
-RUN mkdir /usr/share/jenkins/home/cb-envelope/
-RUN touch /usr/share/jenkins/home/cb-envelope/envelope.json.disabled
 
 #install plugins that aren't bundled
 RUN /usr/local/bin/install-plugins.sh \
