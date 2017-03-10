@@ -1,4 +1,4 @@
-FROM cloudbees/pse-master:2.32.2.6
+FROM cloudbees/pse-master:2.32.2.1
 
 ARG TAG_FROM_TRIGGER=2.32.2.6
 
