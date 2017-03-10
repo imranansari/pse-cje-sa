@@ -30,9 +30,12 @@ RUN /usr/local/bin/install-plugins.sh \
   hipchat \
   branch-api \
   junit \
-  scm-api \
+  git:3.0.2 \
+  script-security:1.27 \
+  folders:5.18 \
+  scm-api:2.0.8 \
   favorite \
-  github-organization-folder \
+  github-organization-folder:1.6 \
   blueocean
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
