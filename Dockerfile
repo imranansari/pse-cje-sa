@@ -32,7 +32,7 @@ RUN /usr/local/bin/install-plugins.sh \
   junit \
   git:3.0.2 \
   script-security:1.27 \
-  folders:5.18 \
+  cloudbees-folder:6.0.2 \
   scm-api:2.0.8 \
   favorite \
   github-organization-folder:1.6 \
