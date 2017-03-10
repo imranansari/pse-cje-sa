@@ -29,6 +29,10 @@ RUN /usr/local/bin/install-plugins.sh \
   pipeline-utility-steps \
   hipchat \
   branch-api \
+  junit \
+  scm-api \
+  favorite \
+  github-organization-folder \
   blueocean
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
