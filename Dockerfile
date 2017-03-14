@@ -23,20 +23,11 @@ COPY ./scriptApproval.xml /usr/share/jenkins/home/
 #install plugins that aren't bundled
 RUN /usr/local/bin/install-plugins.sh \
   audit-trail \
-  http_request \
-  docker-commons:1.4.0 \
-  dockerhub-notification \
-  pipeline-utility-steps \
-  hipchat \
-  branch-api \
-  junit \
-  git:3.0.2 \
-  script-security:1.27 \
-  cloudbees-folder:6.0.2 \
-  scm-api:2.0.8 \
-  favorite \
-  github-organization-folder:1.6 \
-  blueocean
+    http_request \
+    docker-commons:1.4.0 \
+    dockerhub-notification \
+    pipeline-utility-steps \
+    hipchat
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
 USER jenkins
