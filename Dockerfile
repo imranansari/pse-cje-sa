@@ -26,7 +26,7 @@ RUN /usr/local/bin/install-plugins.sh \
     http_request \
     docker-commons:1.4.0 \
     dockerhub-notification \
-    pipeline-utility-steps \
+    pipeline-utility-steps:1.2.2 \
     hipchat
 
 #change back to jenkins user for RUN/ENTRYPOINT commands

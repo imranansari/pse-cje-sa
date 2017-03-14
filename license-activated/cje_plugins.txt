@@ -89,3 +89,4 @@ github-organization-folder
 operations-center-analytics-config
 unique-id
 operations-center-analytics-reporter
+palace-plugin
