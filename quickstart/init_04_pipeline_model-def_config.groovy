@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 
 Logger logger = Logger.getLogger("init.init_04_pipeline_mode-def_config.groovy")
+logger.info("BEGIN docker label for pipeline-model-definition-config")
 File disableScript = new File(Jenkins.getInstance().getRootDir(), ".disable-pipeline-model-definition-config-script")
 if (disableScript.exists()) {
     logger.info("DISABLE pipeline-model-definition-config script")

@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 
 Logger logger = Logger.getLogger("init.init_03_global_pipeline_library.groovy")
+logger.info("BEGIN global_pipeline_library script")
 File disableScript = new File(Jenkins.getInstance().getRootDir(), ".disable-global_libs-script")
 if (disableScript.exists()) {
     logger.info("DISABLE install plugins script")
@@ -26,5 +27,5 @@ List<LibraryConfiguration> libraries= new ArrayList<LibraryConfiguration>()
 libraries.add(libConfig)
 
 globalLibs.setLibraries(libraries)
-
+logger.info("FINISH global_pipeline_library script")
 disableScript.createNewFile()
