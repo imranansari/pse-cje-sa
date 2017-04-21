@@ -1,6 +1,6 @@
-FROM cloudbees/pse-master:1.3.1
+FROM cloudbees/pse-master:2.32.2.1
 
-ARG TAG_FROM_TRIGGER=2.7.20.2
+ARG TAG_FROM_TRIGGER=2.32.2.6
 
 #set java opts variable to skip setup wizard; plugins will be installed via license activated script
 ENV JAVA_ARGS="-Djenkins.install.runSetupWizard=false"
@@ -23,11 +23,11 @@ COPY ./scriptApproval.xml /usr/share/jenkins/home/
 #install plugins that aren't bundled
 RUN /usr/local/bin/install-plugins.sh \
   audit-trail \
-  http_request \
-  docker-commons:1.4.0 \
-  dockerhub-notification \
-  pipeline-utility-steps \
-  hipchat
+    http_request \
+    docker-commons:1.4.0 \
+    dockerhub-notification \
+    pipeline-utility-steps:1.2.2 \
+    hipchat
 
 #change back to jenkins user for RUN/ENTRYPOINT commands
 USER jenkins
